@@ -1,0 +1,5 @@
+load dog.ppm dog
+vertical-flip dog dogv
+horizontal-flip dog dog-horizontal
+save dog-horizontal.ppm dog-horizontal
+save dog-vertical.ppm dogv

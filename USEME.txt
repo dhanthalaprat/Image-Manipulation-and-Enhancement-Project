@@ -1,0 +1,177 @@
+
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+Instructions to use commands that are supported by our application:
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+We have modified our driver class 'ImageManipulator.claas' to determine the program's view based on
+three command-line inputs as follows:
+
+1.If the command "java -jar Program.jar -file path-of-script-file" is used, the program opens the
+specified script file, executes it, and then closes.
+Example: java -jar IMEProject.jar -file script.txt
+
+2.If the command "java -jar Program.jar -text" is used, the program opens in an interactive text
+mode, allowing the user to type the script and execute it line by line.
+Example: java -jar IMEProject.jar -text
+
+3. If the command "java -jar Program.jar" is used or if the jar file is double-clicked, the program
+opens in the graphical user interface mode.
+Example: java -jar IMEProject.jar
+
+-------------------------------
+Operations supported in GUI:
+---------------------------------
+
+* Load image: Load an image by clicking on 'Load Image' button on top and then select the desired
+              file from the file explorer popped up in dialog box and then click open on the
+              bottom of dialog box.
+
+* Save image: Save the image with the desired name and extension at desired filepath by selecting
+              in file explorer from the file explorer popped up in dialog box and then click save
+              on the bottom of dialog box.
+
+* Greyscale image on Component: Convert an image to grey-scaled on desired component.To do this
+                                first load a image (if not loaded )or continue on loaded image if
+                                already loaded.Click on grey-scale button located at the bottom of
+                                the window .On clicking a dialog box pops up asking you to select
+                                an option from 6 radio buttons.The each radio button is for each
+                                component on which the greyscale image needs to be generated.The
+                                six options are red-component, green -component , blue- component ,
+                                luma-component, Intensity-component and Value-component.After
+                                selecting a component we need to press ok button and the grey-scaled
+                                 image is generated.
+
+* Horizontal-flip image: Flip an image horizontally.To do this first load a image (if not loaded )or
+                        continue on loaded image if already loaded.Click on 'Horizontal-Flip' button
+                        located at the bottom of the window.
+
+* Vertical-flip image: Flip an image vertically.To do this first load a image (if not loaded )or
+                      continue on loaded image if already loaded.Click on 'Vertical Flip' button
+                      located at the bottom of the window.
+
+* Brighten image by increment value : brighten the image by the given increment to create a new
+                                      image The increment may be positive (brightening) or negative
+                                      (darkening). To do this first load a image (if not loaded )or
+                                      continue on loaded image if already loaded.Click on 'Brighten'
+                                      button located at the bottom-left of the window.On clicking a
+                                      dialog box pops up asking you to enter a number by which the
+                                      brightening must happen.This number can be positive or
+                                      negative.
+
+
+* Rgb-split image: split the given image into three greyscale images containing its red, green and
+                   blue components respectively.To do this first load a image (if not loaded )or
+                   continue on loaded image if already loaded.Click on 'RGBSplit' button located at
+                    the bottom of the window.On clicking a dialog box pops up giving you the option
+                    of saving red, green and blue images which are produced after performing
+                    rgb-split respectively.
+
+* Rgb-combine image: Combine the three greyscale images into a single image that gets its red,green
+                     and blue components from the three images respectively. To do this first load
+                     a image (if not loaded )or continue on loaded image if already loaded.Click on
+                     'RGBCombine' button located at the bottom of the window.On clicking a dialog
+                     box pops up giving you the option of loading red, green and blue images which
+                     are needed to combine.
+
+* Blur Image :  An operation to blur an image to create a new image.To do this first load a image
+               (if not loaded )or continue on loaded image if already loaded.Click on 'Blur' button
+               located at the bottom of the window.
+
+* Dither Image :   An operation to dither an image.To do this first load a image (if not loaded )or
+                 continue on loaded image if already loaded.Click on 'Dither' button located at the
+                 bottom of the window.
+
+* Sharpen Image : An operation to sharpen an image to create a new image.To do this first load a
+                 image (if not loaded )or continue on loaded image if already loaded.Click on
+                 'Sharpen' button located at the bottom of the window.
+
+* Sepia Image : An operation to convert a normal color image into a sepia-toned image.To do this
+                first load a image (if not loaded )or continue on loaded image if already loaded.
+                Click on 'Sharpen' button located at the bottom of the window.
+
+Conditions:
+                - Image needs to be loaded first before running any operations on it.
+
+
+
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+Script commands are supported by your application
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+
+1.Load image: Load an image from the specified path and refer it to henceforth in the program by
+the given image name.
+Command Syntax: load image-path image-name
+Example: load res/dog.ppm dog
+
+2.Save image: Save the image with the given name to the specified path which should include the
+name of the file.
+Command Syntax: save image-path image-name
+Example: save res/dog-horizontal.ppm dog-horizontal
+
+3.Greyscale image on Component: Create a greyscale image with a component of the image with
+the given name, and refer to it henceforth in the program by the given destination name. Similar
+commands for green, blue, value, luma, intensity components should be supported. Red, green, blue,
+value, luma and intensity are the components that are supported.
+Command Syntax: greyscale component image-name dest-image-name
+Example: greyscale value-component dog dogvalue
+
+4.Horizontal-flip image: Flip an image horizontally to create a new image,
+referred to henceforth by the given destination name.
+Command Syntax: horizontal-flip image-name dest-image-name
+Example: horizontal-flip dog dog-horizontal
+
+5.Vertical-flip image: Flip an image vertically to create a new image,
+referred to henceforth by the given destination name.
+Command Syntax: vertical-flip image-name dest-image-name
+Example: vertical-flip dog dogv
+
+6.Brighten image by increment value : brighten the image by the given increment to create a new
+image, referred to henceforth by the given destination name. The increment may be positive
+(brightening) or negative (darkening).
+Command Syntax: brighten increment image-name dest-image-name
+Example: brighten 50 dog dog-brighter-by-50
+
+7.Rgb-split image: split the given image into three greyscale images containing its red, green and
+blue components respectively.
+Command Syntax: rgb-split image-name dest-image-name-red dest-image-name-green dest-image-name-blue
+Example: rgb-split dog dogred doggreen dogblue
+
+8.Rgb-combine image: Combine the three greyscale images into a single image that gets its red,
+green and blue components from the three images respectively.
+Command Syntax: rgb-combine image-name red-image green-image blue-image
+Example: rgb-combine dog1 dogred doggreen dogblue
+
+9.Run script-file: Load and run the script commands in the specified file.
+Command Syntax: run script-file
+Example: run res/Script1.txt
+
+10.Blur Image : An operation to blur an image to create a new image,referred to henceforth by the
+given destination name.
+Command Syntax: blur image-name dest-image-name
+Example: blur dog dog-blur
+
+11.Dither Image : An operation to dither an image,referred to henceforth by the given destination
+                                   name.
+Command Syntax: dither image-name dest-image-name
+Example: dither dog dog-dither
+
+12.Sharpen Image : An operation to sharpen an image to create a new image,
+                  referred to henceforth by the given destination name.
+Command Syntax: sharpen image-name dest-image-name
+Example: sharpen dog dog-sharpen
+
+13.Greyscale Image : A simple operation is to convert a color image into a greyscale image,
+                    referred to henceforth by the given destination name.
+Command Syntax: greyscale image-name dest-image-name
+Example: greyscale dog dog-greyscale
+
+14.Sepia Image : An operation to convert a normal color image into a sepia-toned image,
+                referred to henceforth by the given destination name.
+Command Syntax: sepia image-name dest-image-name
+Example: sepia dog dog-sepia
+
+Conditions:
+- Image needs to be loaded first before running any operations on it.

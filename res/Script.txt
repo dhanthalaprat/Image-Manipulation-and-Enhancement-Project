@@ -1,0 +1,38 @@
+load dog.ppm dog
+vertical-flip dog dogv
+horizontal-flip dog dog-horizontal
+save dog-horizontal.ppm dog-horizontal
+save dog-vertical.ppm dogv
+brighten 50 dog dog-brighter-by-50
+save dog-brighter-by-50.ppm dog-brighter-by-50
+brighten -50 dog ddarken
+save dog-darken.ppm ddarken
+greyscale value-component dog dogvalue
+save dog-value-greyscale.ppm dogvalue
+greyscale red-component dog dogred
+greyscale green-component dog doggreen
+greyscale blue-component dog dogblue
+greyscale intensity-component dog dogintensity
+greyscale luma-component dog dogluma
+save dog-luma-greyscale.ppm dogluma
+save dog-intensity-greyscale.ppm dogintensity
+save dog-red-greyscale.ppm dogred
+save dog-green-greyscale.ppm doggreen
+save dog-blue-greyscale.ppm dogblue
+save dog-blue-greyscale.ppm dogblue
+rgb-split dog dogred doggreen dogblue
+rgb-combine dog1 dogred doggreen dogblue
+load dog.ppm d
+blur d db
+sharpen d ds
+sepia d dsepia
+greyscale d dg
+dither d dd
+save dog-blur.ppm db
+save dog-sharpen.ppm ds
+save dog-sepia.jpg dsepia
+save dog-greyscale.png dg
+save dog-dither.bmp dd
+load dog-sepia.jpg dog-sepia
+load dog-greyscale.png dog-greyscale
+load dog-dither.bmp dog-dither
